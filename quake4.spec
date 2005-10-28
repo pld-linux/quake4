@@ -1,10 +1,12 @@
 # TODO
+# - don't include libgcc_s.so.1 and libstdc++.so.5 in package (if possible)
 # - dedicated package
 # - .desktop and icon
 # - separate -common, create language packs (us, german available)?
 # - put some decent license
 # - punkbuster? (pb/ subdir)?
 Summary:	Quake4 for Linux
+Summary(pl):	Quake4 dla Linuksa
 Name:		quake4
 Version:	1.0.2147.12
 Release:	0.1
@@ -21,15 +23,15 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		no_install_post_strip	1
 
 %define		_noautoprov		libgcc_s.so.1 libstdc++.so.5
-%define		_noautoreqdep	libgcc_s.so.1 libstdc++.so.5
+%define		_noautoreq		libgcc_s.so.1 libstdc++.so.5
 %define		_gamelibdir		%{_libdir}/games/quake4
-%define		_gamedatadir	%{_datadir}/games/quake4
+%define		_gamedatadir		%{_datadir}/games/quake4
 
 %description
 Quake 4 for Linux.
 
 %description -l pl
-Quake 4 dla linuksa.
+Quake 4 dla Linuksa.
 
 %prep
 %setup -qcT
