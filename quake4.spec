@@ -9,7 +9,7 @@ Summary:	Quake4 for Linux
 Summary(pl):	Quake4 dla Linuksa
 Name:		quake4
 Version:	1.0.2147.12
-Release:	0.1
+Release:	0.2
 License:	?
 Group:		Applications/Games
 Source0:	%{name}-linux-%{version}.x86.run
@@ -17,6 +17,7 @@ Source0:	%{name}-linux-%{version}.x86.run
 NoSource:	0
 URL:		http://zerowing.idsoftware.com/linux/quake4/
 Requires:	OpenGL
+Requires:	libasound.so.2
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
