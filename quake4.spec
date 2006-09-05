@@ -8,23 +8,24 @@
 Summary:	Quake4 for Linux
 Summary(pl):	Quake4 dla Linuksa
 Name:		quake4
-Version:	1.0.2147.12
-Release:	0.2
+Version:	1.3_2
+Release:	0.1
 License:	?
 Group:		Applications/Games
-Source0:	%{name}-linux-%{version}.x86.run
-# NoSource0-md5:	96ac1b993dafe5d255a7ee85d07187db
+# Get from: http://zerowing.idsoftware.com:6969/
+Source0:	%{name}-linux-1.3-2.x86.run
+# NoSource0-md5:	ad79376dac8ae58f5a05a5a61711f29f
 NoSource:	0
 URL:		http://zerowing.idsoftware.com/linux/quake4/
 Requires:	OpenGL
 Requires:	libasound.so.2
-ExclusiveArch:	%{ix86}
+ExclusiveArch:	%{ix86} amd64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		no_install_post_strip	1
 
-%define		_noautoprov		libgcc_s.so.1 libstdc++.so.5
-%define		_noautoreq		libgcc_s.so.1 libstdc++.so.5
+%define		_noautoprov		libgcc_s.so.1 libstdc++.so.6
+%define		_noautoreq		libgcc_s.so.1 libstdc++.so.6
 %define		_gamelibdir		%{_libdir}/games/quake4
 %define		_gamedatadir		%{_datadir}/games/quake4
 
@@ -43,7 +44,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_gamelibdir},%{_gamedatadir}/q4base} \
 	$RPM_BUILD_ROOT{%{_pixmapsdir},%{_desktopdir},%{_bindir}}
 
-install bin/Linux/x86/{libgcc_s.so.1,libstdc++.so.5} $RPM_BUILD_ROOT%{_gamelibdir}
+install bin/Linux/x86/{libgcc_s.so.1,libstdc++.so.6,libSDL-1.2.id.so.0} $RPM_BUILD_ROOT%{_gamelibdir}
 install bin/Linux/x86/{q4ded,quake4}.x86 $RPM_BUILD_ROOT%{_gamelibdir}
 cp -a q4base/* $RPM_BUILD_ROOT%{_gamedatadir}/q4base
 cp -a us/q4base/* $RPM_BUILD_ROOT%{_gamedatadir}/q4base
@@ -66,8 +67,10 @@ rm -rf $RPM_BUILD_ROOT
 
 %dir %{_gamelibdir}
 %attr(755,root,root) %{_gamelibdir}/quake4.x86
+%attr(755,root,root) %{_gamelibdir}/q4ded.x86
 %attr(755,root,root) %{_gamelibdir}/libgcc_s.so.1
-%attr(755,root,root) %{_gamelibdir}/libstdc++.so.5
+%attr(755,root,root) %{_gamelibdir}/libstdc++.so.6
+%attr(755,root,root) %{_gamelibdir}/libSDL-1.2.id.so.0
 %{_gamelibdir}/q4base
 
 %dir %{_gamedatadir}
