@@ -6,7 +6,7 @@
 # - put some decent license
 # - punkbuster? (pb/ subdir)?
 Summary:	Quake4 for Linux
-Summary(pl):	Quake4 dla Linuksa
+Summary(pl.UTF-8):   Quake4 dla Linuksa
 Name:		quake4
 Version:	1.3_2
 Release:	0.1
@@ -32,7 +32,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Quake 4 for Linux.
 
-%description -l pl
+%description -l pl.UTF-8
 Quake 4 dla Linuksa.
 
 %prep
