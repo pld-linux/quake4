@@ -6,7 +6,7 @@
 # - put some decent license
 # - punkbuster? (pb/ subdir)?
 Summary:	Quake4 for Linux
-Summary(pl.UTF-8):   Quake4 dla Linuksa
+Summary(pl.UTF-8):	Quake4 dla Linuksa
 Name:		quake4
 Version:	1.3_2
 Release:	0.1
