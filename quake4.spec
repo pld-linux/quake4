@@ -22,8 +22,6 @@ Requires:	libasound.so.2
 ExclusiveArch:	%{ix86} amd64
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		no_install_post_strip	1
-
 %define		_noautoprov		libgcc_s.so.1 libstdc++.so.6
 %define		_noautoreq		libgcc_s.so.1 libstdc++.so.6
 %define		_gamelibdir		%{_libdir}/games/quake4
