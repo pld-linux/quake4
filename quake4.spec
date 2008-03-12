@@ -19,7 +19,7 @@ NoSource:	0
 URL:		http://zerowing.idsoftware.com/linux/quake4/
 Requires:	OpenGL
 Requires:	libasound.so.2
-ExclusiveArch:	%{ix86} amd64
+ExclusiveArch:	%{ix86} %{x8664}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoprov		libgcc_s.so.1 libstdc++.so.6
